@@ -1,0 +1,162 @@
+/* Made with love by Mutiullah Samim*/
+/* @import url('https://fonts.googleapis.com/css?family=Numans'); */
+@media ( min-width : 768px) {
+	html, body {
+		background-image: url('/static-resources/homePage.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 100%;
+		font-family: 'Numans', sans-serif;
+	}
+}
+
+.container {
+	height: 100%;
+	align-content: center;
+	width: 100% !important;
+	margin-left: auto !important;
+	padding-right: 0 !important;
+	padding-left: 0 !important;
+	margin-right: unset !important;
+}
+
+.row {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: 0px !important;
+	margin-left: -15px !important;
+}
+
+.card {
+	height: 420px;
+	margin-top: auto;
+	margin-bottom: auto;
+	width: 500px;
+	background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.social_icon span {
+	font-size: 60px;
+	margin-left: 10px;
+	color: #FFC312;
+}
+
+.social_icon span:hover {
+	color: white;
+	cursor: pointer;
+}
+
+.card-header h3 {
+	color: white;
+}
+
+.input-group-prepend span {
+	/* width: 50px; */
+	background-color: #FFC312;
+	color: black;
+	border: 0 !important;
+}
+
+input:focus {
+	outline: 0 0 0 0 !important;
+	box-shadow: 0 0 0 0 !important;
+}
+
+.remember {
+	color: white;
+}
+
+.remember input {
+	width: 20px;
+	height: 20px;
+	margin-left: 15px;
+	margin-right: 5px;
+}
+
+.login_btn {
+	color: black;
+	background-color: #FFC312;
+	width: 100px;
+	display: inline-block;
+	font-weight: 400;
+	color: #212529;
+	text-align: center;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	border-radius: .25rem;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out,
+		border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	transition-property: color, background-color, border-color, box-shadow;
+	transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
+	transition-timing-function: ease-in-out, ease-in-out, ease-in-out,
+		ease-in-out;
+	transition-delay: 0s, 0s, 0s, 0s;
+}
+
+.login_btn:hover {
+	color: black;
+	background-color: white;
+}
+
+.links {
+	color: white;
+}
+
+.links a {
+	margin-left: 4px;
+}
+
+#leftPanel {
+	height: 100% !important;
+	justify-content: center !important;
+	margin: auto;
+	top: 25vh;
+	bottom: 25vh;
+	/* margin-top: 21vh;
+    margin-bottom: 21vh; */
+	/* position: absolute; */
+}
+
+@media ( min-width : 768px) {
+	.container {
+		max-width: 100% !important;
+	}
+}
+
+.nopadding {
+	padding: 0 !important;
+}
+
+.returnmessage {
+	margin-bottom: 1rem;
+	margin-top: 5rem;
+	text-align: center;
+}
+
+@media ( max-width : 768px) {
+	.container {
+		width: auto !important;
+	}
+	.card {
+		height: 45% !important;
+		margin-top: auto !important;
+		margin-bottom: auto !important;
+		width: 100% !important;
+		background-color: rgba(0, 0, 0, 0.5) !important;
+	}
+	#leftPanel {
+		height: 100% !important;
+		position: relative;
+		justify-content: center !important;
+		padding: 0px !important;
+	}
+}

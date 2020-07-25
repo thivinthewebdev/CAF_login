@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" th:href="@{/static-resources/logo.png}">
+    <title>Companion</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <!-- <link rel="stylesheet" th:href="@{/css/companion.css}"> -->
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" th:href="@{/css/all.css}">
+    <!-- Font Awesome JS -->
+    <Style></Style>
+
+</head>
+<!-- Error model -->
+<div th:replace="../fragments/errorPopup.html :: errorPopup"></div>
+<!-- Model show -->
+<div class="modal fade" id="createprojectmodel" data-keyboard="false" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div th:replace="../fragments/createProject.html :: createProject"></div>
+</div>
+<div class="modal fade" id="importprojectmodel" data-keyboard="false" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div th:replace="../fragments/importProject.html :: importProject"></div>
+</div>
+<div class="modal fade" id="deleteprojectmodel" data-keyboard="false" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div th:replace="../fragments/deleteProject.html :: deleteProject"></div>
+</div>
+<!-- end of model -->
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div style="display: flex; align-items: center;" class="sidebar-header">
+                <img Style="width: 30%;" th:src=@{/static-resources/logo.png}>
+                <h5 style="padding-left:10%"> CAF
+                    Companion </h5>
+            </div>
+            <ul class="list-unstyled components">
+                <p style="text-align: center;
+                color: #ffba0e;
+                font-weight: bold;">Project Selector</p>
+
+                <div class="drilldown">
+                    <div class="drilldown-container">
+                        <ul class="list-unstyled drilldown-root">
+                            <li> <a href="#">Project
+                                    <i style="float: right;" class="fas  fa-chevron-circle-right"></i></a>
+                                    <p style="text-align: left;
+                                    color: #ffba0e; padding-top: 10%;padding-bottom: 5px; margin-bottom: 0px;font-family: sans-serif;
+                                    ">Selected Project</p>
+                  
+                                    <p title="Choose Project" id="selected" data-toggle="tooltip" data-placement="bottom" style="text-align: right;font-family: sans-serif; width: 90%;white-space: nowrap; overflow: hidden;
+                                    text-overflow: ellipsis; text-align: center; margin: 0px; font-size: 1em; padding-top: 0px;">Choose
+                                        Project
+                                    </p>
+                                <ul class="drilldown-sub">
+                                    <li class="drilldown-back list-unstyled"><a href="#"><i style="float: right;"
+                                                class="fas fa-chevron-circle-left"></i> Back</a></li>
+
+                                    <li id="allProjects">
+                                        <!--Data handeled by JS  -->
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+                        </ul>
+
+                    </div>
+                </div>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li onclick="modelOn('createprojectmodel')" class="spin"
+                    style="display: flex; width: inherit; align-items:center;">
+                    <div class="icon-holder"><i style="padding-left: 5px; padding-right: 5px;"
+                            class="fa-2x fas  fa-plus-circle"></i> </div> <span style="padding-left: 10%;">Create
+                        Project</span>
+                </li>
+                <li onclick="modelOn('importprojectmodel')" class="spin" style="display: flex; align-items:center;">
+                    <div class="icon-holder"> <i style="padding-left: 5px; padding-right: 5px;"
+                            class="fa-2x fas  fa-arrow-circle-down"></i></div> <span style="padding-left: 10%;">Import
+                        Project</span>
+                </li>
+                <li onclick="modelOn('deleteprojectmodel')" class="spin" style="display: flex; align-items:center;">
+                    <div class="icon-holder"><i style="padding-left: 5px; padding-right: 5px;"
+                            class="fa-2x  fa-minus-circle  fas"></i></div><span style="padding-left: 10%;">Delete
+                        Project</span>
+                </li>
+            </ul>
+
+
+
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div class="mobile-zoom" id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="homepage">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Faq</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Docs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Tab Start -->
+            <div class="Content navbar-expand-lg">
+                <!-- Nav pills -->
+                <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item-tab">
+                        <a class="nav-link active" data-toggle="pill" href="#tab1">
+                            <div class="tab-header">Feature
+                                Designer</div>
+                        </a>
+                    </li>
+                    <li class="nav-item-tab">
+                        <a class="nav-link" data-toggle="pill" href="#tab2">
+                            <div class="tab-header">Test Executable Specifications </div>
+                        </a>
+                    </li>
+                    <li class="nav-item-tab">
+                        <a class="nav-link" data-toggle="pill" href="#tab3">
+                            <div class="tab-header">Tab3</div>
+                        </a>
+                    </li>
+                    <li class="nav-item-tab">
+                        <a class="nav-link" data-toggle="pill" href="#tab4">
+                            <div class="tab-header">Tab4</div>
+                        </a>
+                    </li>
+                </ul>
+                <div th:if="${exceptionMessage != null}" class="alert alert-danger alert-dismissible fade show "
+                    role="alert">
+                    <div class=" col align-self-center " style="width: 50%; margin-left: auto; margin-right: auto;">
+                        <div class="col  py-3">
+                            <h4 class="alert-heading text-center">oops!</h4>
+                            <hr>
+                            <p th:text="${exceptionMessage}"></p>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div th:if="${successMessage != null}" class="alert alert-success alert-dismissible fade show  "
+                    role="alert">
+                    <div class=" col align-self-center " style="width: 50%; margin-left: auto; margin-right: auto;">
+                        <div class="col  py-3">
+                            <h4 class="alert-heading text-center">Well done!</h4>
+                            <hr>
+                            <p th:text="${successMessage}"></p>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div id="tab1" class=" tab-pane active">
+                        <div class="content-holder">
+                            <!-- Feature View With JS -->
+                            <div th:replace="../fragments/featureView.html :: featureView"></div>
+                            <!-- end Of Feature View With JS -->
+                        </div>
+                      
+                    </div>
+                    <div id="tab2" class=" tab-pane fade">
+                        <form>
+                            <div class="form-group">
+                                <div class="content-holder">
+                                   
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="tab3" class=" tab-pane fade">
+                        <div class="content-holder">
+                            <!-- Feature Edit With JS -->
+                            <div th:replace="../fragments/featureEdit.html :: featureEdit"></div>
+                            <!-- end Of Feature Edit With JS -->
+                        </div>
+                       
+                    </div>
+                    <div id="tab4" class=" tab-pane fade">
+                        <form>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Tab End -->
+        </div>
+
+    </div>
+   
+    <div th:replace="../fragments/createFeatureDir.html :: createFeatureDir"></div>
+
+
+    <div class="modal fade" id="featureFileCreate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="exampleModalLabel">Create Feature File</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Enter File Name:</label>
+                            <input class="form-control-popup" id="message-text" />
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Enter Feature Description:</label>
+                            <input class="form-control-popup" id="message-text" />
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Add Tags :</label>
+                            <input class="form-control-popup" id="message-text" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- jQuery   -->
+     <script th:src="@{/js/jquery-3.5.1.js}"></script>
+     <!-- Popper.JS -->
+     <script th:src="@{/js/popper.min.js}"></script>
+     <!-- Bootstrap JS -->
+     <script th:src="@{/js/bootstrap.bundle.js}"></script>
+     <!-- Side Menu JS -->
+     <script th:src="@{/js/plugins.js}"></script>
+     <!-- Block ui -->
+     <script th:src="@{/js/blockui.js}"></script>
+     <!-- Always call at end as it has dependencies on the top -->
+     <!-- Custom JS -->
+     <script th:src="@{/js/companion.js}"></script>
+     <script th:src="@{/js/featureEdit.js}"></script>
+     <!-- <script src="/js/jquery.drilldown.js"></script> -->
+     <!-- <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+     <script src="dist/jquery.drilldown.js"></script> -->
+ 
+     <script>
+         $('#myTab a:last').tab('show');
+         $('.drilldown').drilldown();
+         $(document).ready(function () {
+             $("body").tooltip({
+                 selector: '[data-toggle=tooltip]'
+             });
+         });
+         //Function for keyword selection in feature
+         $(document).on('click', '.dropdown-menu li', function (e) {
+             $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+             $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+         });
+ 
+     </script>
+
+    <script>
+        function modelOn(fragment) {
+            $('#' + fragment).modal('show')
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(".content-holder").toggleClass('active');
+                $(".tab-header").toggleClass('active');
+                $(".mobile-zoom").toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+  
+</body>
+<style>
+    @keyframes circle {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .spin {
+        transition: all 0.2s linear;
+        border: 1px solid #1f2833 !important;
+        transform: rotate(0.03deg);
+        cursor: pointer;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+    }
+
+    .spin:hover {
+        border: 1px solid #ffba0e !important;
+    }
+
+    .spin:hover i {
+
+        animation: circle 1s infinite;
+    }
+
+    @keyframes spin {
+        from {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        to {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    .icon-holder {
+        height: 33px;
+        width: 33px;
+    }
+
+    .drilldown ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .drilldown {
+        overflow: hidden;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    .drilldown-sub {
+        display: none;
+    }
+
+    .fas {
+        color: #ffba0e;
+    }
+
+    .fade-scale {
+        transform: scale(0);
+        opacity: 0;
+        -webkit-transition: all .25s linear;
+        -o-transition: all .25s linear;
+        transition: all .25s linear;
+    }
+
+    .fade-scale.in {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+
+    .nav-tabs .nav-link.active {
+        color: #495057;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-right: white;
+    }
+
+    .nav-tabs .nav-link {
+        /* border: 1px solid transparent; */
+        /* border-top-left-radius: .25rem; */
+        /* border-top-right-radius: .25rem; */
+        border: 1px solid #dee2e6;
+        background-color: #dee2e6;
+    }
+
+    .fade:not(.show) {
+        opacity: 0;
+        display: none;
+    }
+
+    .vertical-tabpanel {
+        left: 0;
+        float: left;
+        height: 100%;
+        width: 15%;
+        z-index: 1;
+        /* top: 0; */
+    }
+
+    .vertical-tabpane {
+        right: 0;
+        height: 100%;
+        width: 85%;
+        position: inherit;
+        float: right;
+        z-index: 1;
+        align-items: center;
+    }
+
+    input,
+    input:hover,
+    input:focus {
+        border: 1px solid #ffba0e;
+        transition: all 0.3s;
+    }
+
+
+</style>
+
+</html>

@@ -1,0 +1,314 @@
+body {
+	overflow-y: hidden;
+	font-size: 16px;
+	font-family: 'Exo', sans-serif;
+}
+
+.section_2_container {
+	width: 100%;
+	height: 95vh;
+	// margin-top: 2.5vh;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	// align-items: center;
+	// background-color:#ffffff;
+	background-color: #ffffff;
+	// background-image: linear-gradient(62deg, #fffad2 0%, #ffffff 100%);
+	//
+
+	#sec_2_left_container {
+		width: 30vw;
+		margin-left: 1vw;
+		// min-height: 50vh;
+		z-index: 1;
+		padding-top: 2vh;
+		padding-bottom: 10vh;
+		padding-left: 2vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		height: 95vh;
+
+		.card {
+			width: 29vw;
+			height: 70vh;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			margin-top: -10vh;
+			animation: slidefromright 0.6 ease-in-out;
+
+			@keyframes slidefromright {
+				from {
+				-webkit-transform: translateX(-89vh);
+						transform: translateX(-89vh);
+				}
+				to {
+				-webkit-transform: translateX(0vh);
+						transform: translateX(0vh);
+				}
+			}
+		
+
+			.card-body {
+				display: flex;
+				// padding: 1.25rem;
+				padding-top: 3vh;
+				padding-bottom: 4vh;
+				padding-left: 1vw;
+				background-color: #fff;
+				border-style: solid;
+				border-color: #ffc312;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 80%;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				// background-color: rgba(255, 248, 157, 0.3);
+
+				// margin-top: -20vh;
+
+				.card-top-text
+				{
+					p
+					{
+						font-weight: 300;
+						color: #333;
+						font-size: 1.3em;;
+					}
+			
+				}
+
+				.s2_left_form {
+					width: 90%;
+				}
+
+				.sec2_form {
+					width: 90%;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-around;
+					align-items: flex-start;
+
+					#formbuttons
+					{
+						width: 90%;
+						display: flex;
+						justify-content: space-between;	
+						align-items: flex-start;
+					}
+
+					.returnmessage_additional
+					{
+						display: flex;
+						justify-content: flex-start;
+					}
+				}
+				
+			}
+			
+			.card-footer
+			{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				height: 6vh;
+				font-family: 'Exo', sans-serif; 
+				width: 25vw;
+				height:7vh;
+				// background-color: rgba(255, 248, 157, 0.3);
+				border: rgba(65, 65, 65, 0.3);
+
+				.card-footer-text
+				{
+					font-family: 'Quicksand', sans-serif;
+					font-size: 1.2em;
+				}
+			}
+
+		}
+
+		#s2_logo {
+			img {
+				min-width: 1vh;
+				min-height: 1vh;
+				height: 150px;
+				width: 360px;
+				// transition: all 0.6s ease-in-out;
+				animation: slidefromtop 0.6s ease-in-out;
+				margin-bottom: 15px;
+
+
+			@keyframes slidefromtop {
+				from {
+				// -webkit-transform: translateX(-38vh);
+				// 		transform: translateX(-38vh);
+						opacity: 0;
+				}
+				to {
+				// -webkit-transform: translateX(0vh);
+				// 		transform: translateX(0vh);
+						opacity: 1;
+				}
+			}
+				// z-index: 8;
+				// padding-left: 2vw;
+			}
+		}
+		.login_btn {
+			color: black;
+			background-color: #FFC312;
+			width: 100px;
+			display: inline-block;
+			font-weight: 400;
+			color: #212529;
+			text-align: center;
+			vertical-align: middle;
+			font-family: 'Quicksand', sans-serif;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			border: 1px solid transparent;
+			padding: .375rem .75rem;
+			font-size: 1rem;
+			line-height: 1.5;
+			border-radius: .25rem;
+			transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+			transition-property: color, background-color, border-color, box-shadow;
+			transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
+			transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+			transition-delay: 0s, 0s, 0s, 0s;
+
+			&:hover{
+					color: black;
+					background-color: white;
+
+			}
+		}
+	}
+
+	#sec_2_right_container 
+	{
+		width: 66vw;
+		margin-left: 1vw;
+		z-index: 3;
+		// background-color:  #a83a3a;
+		background-image: url("sec2_large.png");
+		background-size: 99.85% 100%;
+		height: 95vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+
+		.sec_2_right_slider
+		{
+
+
+
+
+			#sec2_slider_container
+			{
+				height: 50vh;
+				width: 50vw;
+				background-color: #fff9d6;
+				margin-left: 5vh;
+	
+				.sec2_slider_inner_slide
+				{
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					// background-color: #000000;
+					height: 45vh;
+
+					padding: 2vh;
+	
+					.s2_slider_image
+					{
+	
+					}
+	
+					.s2_slider_heading
+					{
+						padding: 0vh;	
+						// border-bottom: 5px solid  #ffc312 ;
+						height:5vh;
+						// background-color: #ffc312;
+						margin-top: 2vh;
+						border-radius: 3px;
+						padding: 0 1.2em;
+						width: 16vw;
+						text-align: center;
+						p{
+							font-size: 1.2rem;
+							font-family: 'Quicksand', sans-serif;
+							font-weight: 600;
+							color: #333;
+							cursor: pointer;
+						}
+					
+					}
+	
+					.s2_slider_description
+					{
+						// padding-left:4vh;
+						// background-color: #333333;
+						p {
+							font-size: 1em;
+							font-family: 'Quicksand', sans-serif;
+							font-weight: 100;
+							color: #333;
+							text-align: center;
+						};
+				
+	
+	
+					}
+				}
+			}
+		}
+
+
+
+
+	}
+}
+
+.section_3_container {
+	width: 100%;
+	height: 5vh;
+	// margin-top: 2.5vh;
+	z-index: 100;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	padding-top: 1vh;
+	box-shadow: 10px 10px 20px 10px rgba(65, 65, 65, 0.3);
+
+	p {
+		font-family: "Exo", sans-serif;
+		font-size: 1rem;
+		color: #333333;
+	}
+}
+
+
+//PARTICEL
+
+#particles-js {
+	width: 66vw;
+	height: 95vh;
+	position: absolute;
+}

@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0,  maximum-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>CAF Companion Login Page</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/homepage.css}">
+<link rel="stylesheet" type="text/css" th:href="@{styles.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/bootstrap.min.css}">
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" th:href="@{/css/all.css}">
+
+<link rel="stylesheet" href="/home/thivin/temp/dinesh/src/main/resources/static/css/all.css">
+<link rel="stylesheet" href="/home/thivin/temp/dinesh/src/main/resources/static/css/bootstrap.css">
+<link rel="stylesheet" href="/home/thivin/temp/dinesh/src/main/resources/static/css/bootstrap.min.css">
+<link rel="stylesheet" href="/home/thivin/temp/dinesh/src/main/resources/static/css/companion.css">
+<link rel="stylesheet" href="/home/thivin/temp/dinesh/src/main/resources/static/css/homepage.css">
+<link rel="stylesheet" href="/home/thivin/temp/dinesh/src/main/resources/static/css/main.css">
+
+
+<script src="/home/thivin/temp/dinesh/src/main/resources/static/js/blockui.js"></script>
+<script src="/home/thivin/temp/dinesh/src/main/resources/static/js/bootstrap.bundle.js"></script>
+<script src="/home/thivin/temp/dinesh/src/main/resources/static/js/bbootstrap.min.js"></script>
+<script src="/home/thivin/temp/dinesh/src/main/resources/static/js/companion.js"></script>
+<script src="/home/thivin/temp/dinesh/src/main/resources/static/js/featureEdit.js"></script>
+<script src="/home/thivin/temp/dinesh/src/main/resources/static/js/jquery-3.5.1.js"></script>
+<script src="/home/thivin/temp/dinesh/src/main/resources/static/js/plugins.js"></script>
+
+
+
+</head>
+<body>
+	<div class="container">
+	<div class="row">
+		<div id="leftPanel" class="d-flex col-md-5">
+			<div class="card">
+				<div class="card-header">
+					<h3>Sign In</h3>
+				</div>
+				<div class="card-body">
+					<form action="#" method="post" th:action="@{/homepage}"
+						th:object="${userWorkspace}">
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" class="form-control" id="workspaceName"
+								th:field="*{workspaceName}" placeholder="workspace name"
+								required>
+
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" class="form-control" id="workspacePwd"
+								th:field="*{workspacePwd}" placeholder="password" required>
+						</div>
+						<!-- <div class="row align-items-center remember">
+							<input type="checkbox">Remember Me
+						</div> -->
+						<div class="form-group">
+							<input type="submit" value="Login" name="action"
+								class="float-left login_btn">
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Create" name="action"
+								class="float-right login_btn">
+						</div>
+						<div class="form-group returnmessage">
+							
+								<div th:if="${exceptionMessage != null}"
+									th:text="${exceptionMessage}" data-toggle="modal"
+									data-target="#exampleModal" class="alert alert-danger"
+									role="alert" th:name="message" value="${exceptionMessage}"
+									th:value="${exceptionMessage}"></div>
+								<div th:if="${successMessage != null}"
+							 		th:text="${successMessage}" data-toggle="modal"
+									data-target="#exampleModal" class="alert alert-success"
+									role="alert" th:name="message" value="${successMessage}"
+									th:value="${successMessage}"></div>
+						</div>
+
+					</form>
+				</div>
+				<!-- <div class="card-footer">
+					<div class="d-flex justify-content-center links">
+						Don't have an account?<a href="#">Sign Up</a>
+					</div>
+					<div class="d-flex justify-content-center">
+						<a href="#">Forgot your password?</a>
+					</div>
+				</div> -->
+			</div>
+		</div>
+		<div id="rightPanel" class="col nopadding">
+		<!-- <div id="image" ></div> -->
+			<!-- <iframe frameborder="0"
+				src="https://c.salesforce.com/login-messages/promos.html"
+				id="marketing" name="marketing" scrolling="no" title="Marketing"
+				tabindex="-1"
+				sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts"></iframe> -->
+		</div>
+	</div>
+	</div>
+
+</body>
+</html>

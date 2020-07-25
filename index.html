@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main2.css">
+    <!-- <link rel="stylesheet" href="homepage.css"> -->
+	<!-- <link rel="stylesheet" href="bootstrap.css"> -->
+	<link href="https://fonts.googleapis.com/css2?family=Muli&family=Titillium+Web&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    
+
+    <link rel="stylesheet" href="all.css">
+
+	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+</head>
+<body>
+    <!-- Section -1 , Contains Logo and the title of Webpage -->
+
+
+
+    <!-- Section - 2 -- Container for login form and the modules section -->
+    <div id="section_2_container" class="section_2_container">
+
+        <div id = "sec_2_left_container" >
+            <div id = "s2_logo" class="s2_logo" >
+                <img src="title.svg"></img>
+            </div>
+            <div class="card">
+				<div class="card-body">
+					<div class = "card-top-text">
+						<p> Sample text</p>
+					</div>
+					<form action="#" method="post" th:action="@{/homepage}"
+						th:object="${userWorkspace}" class="sec2_form">
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" class="form-control" id="workspaceName"
+								th:field="*{workspaceName}" placeholder="workspace name"
+								required>
+
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" class="form-control" id="workspacePwd"
+								th:field="*{workspacePwd}" placeholder="password" required>
+						</div>
+						<div class="row align-items-center remember">
+							<input type="checkbox">  &nbsp;&nbsp;  Remember Me
+						</div>
+
+						<div id="formbuttons">
+							<div class="form-group">
+								<input type="submit" value="Login" name="action"
+									class="float-left login_btn">
+							</div>
+							<div class="form-group">
+								<input type="submit" value="Create" name="action"
+									class="float-right login_btn">
+							</div>
+						</div>	
+						
+
+
+						<div class="form-group returnmessage returnmessage_additional">
+							
+								<div th:if="${exceptionMessage != null}"
+									th:text="${exceptionMessage}" data-toggle="modal"
+									data-target="#exampleModal" class="alert"
+									role="alert" th:name="message" value="${exceptionMessage}"
+									th:value="${exceptionMessage}"></div>
+								<div th:if="${successMessage != null}"
+							 		th:text="${successMessage}" data-toggle="modal"
+									data-target="#exampleModal" class="alert"
+									role="alert" th:name="message" value="${successMessage}"
+									th:value="${successMessage}"></div>
+						</div>
+
+					</form>
+			</div>
+			<div class="card-footer">
+					<div class="d-flex justify-content-center links card-footer-text">
+						Don't have an account ? &nbsp&nbsp&nbsp<a href="#" style="color: #ffc312;">    Sign Up</a>
+					</div>
+					<div class="d-flex justify-content-center card-footer-text">
+						<a href="#" style="color: #ffc312;">Forgot your password?</a>
+					</div>
+				</div>
+			</div>
+        </div>
+
+        <div id = "sec_2_right_container" >
+			<div id="particles-js">
+
+			</div>
+			<div class="sec_2_right_slider">
+				<div id = "sec2_slider_container" class="sec2_slider">
+					<div class="sec2_slider_inner_slide">
+						<div class="s2_slider_image"> 
+							<img src="6_Cloud@web.svg"></img>
+						</div>
+						<div class="s2_slider_heading">
+							<p> Autonomous Execution<p>
+						</div>
+						<div class="s2_slider_description">
+							<p> All tests are triggered from the orchestration layer via any CI/CD Server and the execution will run on cloud services (AWS, GCP & Azure) which can be scheduled or triggered.<p>
+						</div>
+					</div>
+					<div class="sec2_slider_inner_slide">
+						<div class="s2_slider_image"> 
+							<img src="6_Fixing@web.svg"></img>
+						</div>
+						<div class="s2_slider_heading">
+							<p> Refactor<p>
+						</div>
+						<div class="s2_slider_description">
+							<p> The Codeless Automation capability team maintains and enhances the core accelerator capability to make the source code from the automation engineers, manual test engineers as executable.<p>
+						</div>
+					</div>
+	
+					<div class="sec2_slider_inner_slide">
+						<div class="s2_slider_image"> 
+							<img src="6_Reports@web.svg"></img>
+						</div>
+						<div class="s2_slider_heading">
+							<p> Reports & Analytics<p>
+						</div>
+						<div class="s2_slider_description">
+							<p> Test result reports can be reviewed via the reporting available through the orchestrator interface ELK which includes AI and ML. Detailed codeless automation accelerator reports are available as well.<p>
+						</div>
+					</div>
+	
+					<div class="sec2_slider_inner_slide">
+						<div class="s2_slider_image"> 
+							<img src="6_Testing@web.svg"></img>
+						</div>
+						<div class="s2_slider_heading">
+							<p>Test Automation<p>
+						</div>
+						<div class="s2_slider_description">
+							<p> Automation Engineers, manual test engineers will write progression/ regression test cases by utilizing the provided executable specification templates. For this, there is no coding required.<p>
+						</div>
+					</div>
+	
+				</div>
+			</div>
+
+
+    	</div>
+	
+	</div>
+    <!-- section - 3 - footer Information -->
+    <div id="section_3_container" class="section_3_container">
+        <p id="sec_3_footer">  Copyright&copy; 2020 All rights Reserved</p>
+    </div>  
+   
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>	
+	<script type="text/javascript" src="function.js"></script>
+	<script type="text/javascript" src="slick/slick.min.js"></script>
+	<script type="text/javascript" src="./particles.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>
