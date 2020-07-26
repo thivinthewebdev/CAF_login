@@ -2,7 +2,7 @@ $(document).ready(function(){
     $('.sec2_slider').slick({
         lazyLoad: 'ondemand',
         autoplay: true,
-        autoplaySpeed: 20000,
+        autoplaySpeed: 3000,
         infinite: true,
         slidesToShow: 2,
         slidesToScroll: 2,

@@ -108,6 +108,7 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  border-radius: 15px;
 }
 
 .section_2_container #sec_2_left_container .card .card-body .card-top-text p {
@@ -252,7 +253,7 @@ body {
   width: 66vw;
   margin-left: 1vw;
   z-index: 3;
-  background-image: url("sec2_large.png");
+  background: linear-gradient(150deg, rgba(255, 204, 94, 0.85) 0%, rgba(255, 195, 18, 0.85) 100%);
   background-size: 99.85% 100%;
   height: 95vh;
   display: -webkit-box;
@@ -271,13 +272,11 @@ body {
 }
 
 .section_2_container #sec_2_right_container .sec_2_right_slider #sec2_slider_container {
-  height: 50vh;
-  width: 50vw;
-  background-color: #fff9d6;
+  height: 70vh;
+  width: 55vw;
+  background-color: #ffffff;
   margin-left: 5vh;
-}
-
-.section_2_container #sec_2_right_container .sec_2_right_slider #sec2_slider_container .sec2_slider_inner_slide {
+  border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -288,11 +287,30 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.section_2_container #sec_2_right_container .sec_2_right_slider #sec2_slider_container .sec2_slider_inner_slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 45vh;
+  height: 50vh;
   padding: 2vh;
+}
+
+.section_2_container #sec_2_right_container .sec_2_right_slider #sec2_slider_container .sec2_slider_inner_slide .s2_slider_image img {
+  min-width: 15vh;
+  min-height: 15vh;
+  height: 29vh;
 }
 
 .section_2_container #sec_2_right_container .sec_2_right_slider #sec2_slider_container .sec2_slider_inner_slide .s2_slider_heading {

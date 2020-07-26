@@ -72,6 +72,7 @@ body {
 				display: flex;
 				flex-direction: column;
 				justify-content: flex-start;
+				border-radius: 15px;
 				// background-color: rgba(255, 248, 157, 0.3);
 
 				// margin-top: -20vh;
@@ -202,7 +203,9 @@ body {
 		margin-left: 1vw;
 		z-index: 3;
 		// background-color:  #a83a3a;
-		background-image: url("sec2_large.png");
+		// background-image: url("sec2_large.png");
+		// background: radial-gradient(circle, rgba(255,195,18,1) 0%, rgba(217,216,212,1) 31%, rgba(255,255,255,1) 100%);
+		background: linear-gradient(150deg, rgba(255,204,94,0.85) 0%, rgba(255,195,18,0.85) 100%);
 		background-size: 99.85% 100%;
 		height: 95vh;
 		display: flex;
@@ -214,30 +217,39 @@ body {
 		.sec_2_right_slider
 		{
 
-
-
-
 			#sec2_slider_container
 			{
-				height: 50vh;
-				width: 50vw;
-				background-color: #fff9d6;
+				height: 70vh;
+				width: 55vw;
+				background-color: #ffffff;
 				margin-left: 5vh;
+				border-radius: 10px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+
 	
 				.sec2_slider_inner_slide
 				{
 					display: flex;
 					flex-direction: column;
-					justify-content: center;
+					justify-content: space-evenly;
 					align-items: center;
 					// background-color: #000000;
-					height: 45vh;
+
+					height: 50vh;
 
 					padding: 2vh;
 	
 					.s2_slider_image
 					{
-	
+						img{
+							min-width: 15vh;
+							min-height: 15vh;
+							height: 29vh;
+						}
+
+
 					}
 	
 					.s2_slider_heading
