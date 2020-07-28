@@ -227,7 +227,7 @@ body {
   padding: .375rem .75rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: .25rem;
+  border-radius: 25.25rem;
   -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
@@ -240,6 +240,8 @@ body {
           transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
   -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
           transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   -webkit-transition-delay: 0s, 0s, 0s, 0s;
           transition-delay: 0s, 0s, 0s, 0s;
 }
@@ -247,6 +249,8 @@ body {
 .section_2_container #sec_2_left_container .login_btn:hover {
   color: black;
   background-color: white;
+  border: 3px solid #ffc312;
+  border-radius: 29px;
 }
 
 .section_2_container #sec_2_right_container {
@@ -299,20 +303,20 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 50vh;
+  height: 55vh;
   padding: 2vh;
+  margin-top: -5vh;
 }
 
 .section_2_container #sec_2_right_container .sec_2_right_slider #sec2_slider_container .sec2_slider_inner_slide .s2_slider_image img {
-  min-width: 15vh;
-  min-height: 15vh;
-  height: 29vh;
+  height: 34vh;
+  width: 18vw;
 }
 
 .section_2_container #sec_2_right_container .sec_2_right_slider #sec2_slider_container .sec2_slider_inner_slide .s2_slider_heading {
@@ -331,6 +335,10 @@ body {
   font-weight: 600;
   color: #333;
   cursor: pointer;
+}
+
+.section_2_container #sec_2_right_container .sec_2_right_slider #sec2_slider_container .sec2_slider_inner_slide .s2_slider_description {
+  width: 25	vw;
 }
 
 .section_2_container #sec_2_right_container .sec_2_right_slider #sec2_slider_container .sec2_slider_inner_slide .s2_slider_description p {

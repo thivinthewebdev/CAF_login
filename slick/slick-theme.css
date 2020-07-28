@@ -55,16 +55,16 @@
 .slick-prev:before,
 .slick-next:before {
   font-family: "slick";
-  font-size: 55px;
-  line-height: 1;
-  color: #333333;
+  font-size: 40px;
+  line-height: 0;
+  color: #fff;
   opacity: 0.75;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .slick-prev {
-  left: -55px;
+  left: -45px;
 }
 
 [dir="rtl"] .slick-prev {
@@ -153,8 +153,8 @@
   width: 20px;
   height: 20px;
   font-family: "slick";
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 17px;
+  line-height: 20px;
   text-align: center;
   color: black;
   opacity: 0.25;
